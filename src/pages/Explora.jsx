@@ -1,5 +1,5 @@
 import { Navbar, Footer } from "../components";
-import { ExploraAnimation } from "../components";
+import ExploraLanding from "./ExploraLanding";
 
 function Explora() {
   return (
@@ -7,11 +7,10 @@ function Explora() {
       <div className="explora-navbar">
         <Navbar />
       </div>
-      <ExploraAnimation />
+      <ExploraLanding /> {/* ← replaced ExploraAnimation */}
       <Footer />
     </div>
   );
 }
 
 export default Explora;
-
