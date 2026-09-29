@@ -54,13 +54,136 @@
       pointer-events: none;
     }
 
+    /* LOGO HEADER */
+    .logo-header {
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(10, 14, 39, 0.9) 100%);
+      border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+      padding: 1.5rem;
+      position: relative;
+      z-index: 50;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .logo-left, .logo-right {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-left {
+      flex-direction: column;
+    }
+
+    .college-logo {
+      height: 60px;
+      width: auto;
+      filter: brightness(1.1);
+    }
+
+    .logo-center {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .header-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #f0f6ff;
+    }
+
+    .header-subtext {
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-right {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .organized-by {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffa500;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .sangillence-logo {
+      height: 50px;
+      width: auto;
+      filter: brightness(1.2) contrast(1.1);
+    }
+
+    @media (max-width: 1024px) {
+      .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .logo-center {
+        order: 2;
+      }
+
+      .logo-left {
+        order: 1;
+      }
+
+      .logo-right {
+        order: 3;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-header {
+        padding: 1rem;
+      }
+
+      .logo-container {
+        gap: 1rem;
+      }
+
+      .college-logo {
+        height: 45px;
+      }
+
+      .sangillence-logo {
+        height: 40px;
+      }
+
+      .header-text {
+        font-size: 0.8rem;
+      }
+
+      .header-subtext {
+        font-size: 0.65rem;
+      }
+    }
+
     /* NAVBAR */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 99;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -108,9 +231,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8rem 1.5rem 4rem;
+      padding: 6rem 1.5rem 4rem;
       position: relative;
       z-index: 1;
+      margin-top: 80px;
     }
 
     .hero-header {
@@ -576,6 +700,23 @@
     <source src="/Futuristic_AI_Hand_Connection_Animation.mp4" type="video/mp4">
   </video>
   <div class="bg-overlay"></div>
+
+  <!-- HEADER WITH LOGOS -->
+  <header class="logo-header">
+    <div class="logo-container">
+      <div class="logo-left">
+        <img src="/assets/college-logo.svg" alt="ABV-IIITM Gwalior" class="college-logo">
+      </div>
+      <div class="logo-center">
+        <div class="header-text">ATAL BIHARI VAJPAYEE IIITM GWALIOR</div>
+        <div class="header-subtext">An Institute of National Importance • Ministry of Education</div>
+      </div>
+      <div class="logo-right">
+        <div class="organized-by">ORGANIZED BY</div>
+        <img src="/assets/sangillence-logo.png" alt="Sangillence" class="sangillence-logo">
+      </div>
+    </div>
+  </header>
 
   <!-- NAVBAR -->
   <nav>
