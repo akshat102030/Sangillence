@@ -6,47 +6,15 @@
   <link rel="icon" type="image/png" href="/assets/sangillenceLogo.png" />
   <title>AI Synergy Hackathon 2026 | ABV-IIITM Gwalior</title>
   <meta name="description"
-    content="Investigate real-world cases, reason with AI, build adaptable solutions, and compete at AI Synergy Hackathon 2026 at ABV-IIITM Gwalior. 29–30 October 2026. ₹1,00,000 Prize Pool." />
-  <meta name="keywords"
-    content="AI Synergy Hackathon 2026, ABV-IIITM Gwalior, AI Hackathon India, Human-AI Collaboration, Gwalior AI Summit, Sangillence, Case-First Hackathon, AI Problem Solving" />
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI Synergy Hackathon 2026 — Think with AI. Build beyond it." />
-  <meta property="og:description"
-    content="A case-first Human–AI hackathon at ABV-IIITM Gwalior. Investigate ambiguous situations, challenge AI reasoning, adapt under constraints, and compete for ₹1,00,000." />
-  <meta property="og:image"
-    content="/assets/og-image.jpg" />
-  <meta property="og:url" content="https://sangillence.com/ai-synergy" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Synergy Hackathon 2026 — Think with AI. Build beyond it." />
-  <meta name="twitter:description" content="A case-first Human–AI hackathon at ABV-IIITM Gwalior. Oct 29–30, 2026." />
+    content="AI Synergy Hackathon 2026: Think with AI. Build beyond it. Join us at ABV-IIITM Gwalior on Oct 29-30. ₹1,00,000 Prize Pool. Register now!" />
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #020617;
-      --surface: #071426;
-      --surface-elevated: #0b1730;
-      --cyan: #22d3ee;
-      --blue: #3b82f6;
-      --violet: #a855f7;
-      --amber: #f59e0b;
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --D: 'Orbitron', monospace;
-      --B: 'Exo 2', sans-serif;
-      --r: 12px;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -55,29 +23,35 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--B);
-      overflow-x: hidden;
+      background: #0a0e27;
+      color: #f0f6ff;
+      font-family: 'Exo 2', sans-serif;
       line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* GRID BACKDROP */
-    .grid-backdrop {
+    /* VIDEO BACKGROUND */
+    .video-bg {
       position: fixed;
-      inset: 0;
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.4) contrast(1.1);
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0.7) 0%, rgba(10, 14, 39, 0.85) 50%, rgba(10, 14, 39, 0.95) 100%);
       z-index: -1;
-      background-image:
-        linear-gradient(to right, rgba(34, 211, 238, .055) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(34, 211, 238, .055) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
     }
 
     /* NAVBAR */
@@ -91,140 +65,91 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(2, 6, 23, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(34, 211, 238, .1);
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(0, 229, 255, 0.2);
     }
 
     .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-family: 'Orbitron', monospace;
+      font-size: 1.2rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff6b5b, #ffa500, #ffd700, #00ff88, #00d4ff, #7f39fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-decoration: none;
-      font-family: var(--D);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--cyan);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .nav-brand img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-family: var(--D);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--cyan);
+      letter-spacing: 2px;
     }
 
     .nav-cta {
-      padding: 0.5rem 1.25rem;
-      border: 1.5px solid var(--cyan);
-      color: var(--cyan);
-      background: transparent;
-      border-radius: var(--r);
-      font-family: var(--D);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      padding: 0.6rem 1.5rem;
+      background: linear-gradient(135deg, #ffa500, #ff6b5b);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 0 30px rgba(34, 211, 238, .22);
-      transition: background 0.2s, color 0.2s;
       text-decoration: none;
-      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
     }
 
     .nav-cta:hover {
-      background: var(--cyan);
-      color: var(--bg);
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 0.75rem 1rem;
-      }
-      .nav-links {
-        display: none;
-      }
-      .nav-brand {
-        font-size: 0.65rem;
-      }
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
     }
 
     /* HERO */
     .hero {
-      position: relative;
-      z-index: 1;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 6rem 1.5rem 4rem;
-      margin-top: 4rem;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(34,211,238,0.01)' stroke-width='1'/%3E%3C/svg%3E");
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    .hero-content {
+      padding: 8rem 1.5rem 4rem;
       position: relative;
       z-index: 1;
-      max-width: 900px;
     }
 
-    .hero h1 {
-      font-family: var(--D);
-      font-size: clamp(2rem, 8vw, 4.5rem);
+    .hero-header {
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #00d4ff;
+      font-family: 'Orbitron', monospace;
+    }
+
+    .hero-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2.5rem, 10vw, 5rem);
       font-weight: 900;
       line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--cyan);
-      letter-spacing: -0.02em;
-      text-shadow: 0 0 30px rgba(34, 211, 238, .3);
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ff6b5b, #ffa500, #ffd700, #00ff88, #00d4ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px rgba(255, 107, 91, 0.3);
+      letter-spacing: -2px;
     }
 
     .hero-subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: var(--muted);
-      margin-bottom: 2rem;
-      line-height: 1.8;
-      font-weight: 300;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+      max-width: 600px;
     }
 
     .hero-meta {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      font-size: 1rem;
-      color: var(--text);
+      gap: 0.8rem;
+      margin: 2rem 0;
       font-weight: 600;
+      font-size: 1.1rem;
     }
 
     .hero-meta-item {
@@ -232,744 +157,594 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      color: #ffa500;
     }
 
     .hero-meta-item::before {
       content: '◆';
-      color: var(--amber);
+      font-size: 1.2rem;
     }
 
-    .hero-cta-group {
+    .cta-group {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin: 2.5rem 0;
     }
 
     .btn {
-      padding: 0.75rem 2rem;
-      border-radius: var(--r);
-      font-family: var(--D);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       text-transform: uppercase;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s;
       border: none;
-      font-weight: 600;
     }
 
     .btn-primary {
-      background: var(--cyan);
-      color: var(--bg);
-      box-shadow: 0 0 30px rgba(34, 211, 238, .22);
+      background: linear-gradient(135deg, #ffa500, #ff6b5b);
+      color: white;
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
     }
 
     .btn-primary:hover {
-      background: #06b6d4;
-      box-shadow: 0 0 40px rgba(34, 211, 238, .35);
-      transform: scale(1.02);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
     }
 
     .btn-secondary {
-      border: 1.5px solid var(--cyan);
-      color: var(--cyan);
+      border: 2px solid #00d4ff;
+      color: #00d4ff;
       background: transparent;
-      box-shadow: inset 0 0 30px rgba(34, 211, 238, .1);
     }
 
     .btn-secondary:hover {
-      background: rgba(34, 211, 238, .1);
+      background: rgba(0, 212, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
     }
 
-    .hero-image {
-      width: 100%;
-      max-width: 900px;
-      margin-top: 3rem;
-      border-radius: var(--r);
-      overflow: hidden;
-      box-shadow: 0 0 50px rgba(34, 211, 238, .2);
-    }
-
-    .hero-image img {
-      width: 100%;
-      display: block;
-    }
-
-    /* TRUST STRIP */
-    .trust-strip {
-      position: relative;
-      z-index: 1;
-      border-y: 1px solid rgba(255, 255, 255, .1);
-      background: rgba(255, 255, 255, .025);
-      padding: 2rem 1.5rem;
-      margin: 3rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
+    /* THEME ICONS SECTION */
+    .themes-showcase {
+      padding: 4rem 1.5rem;
       text-align: center;
     }
 
-    .trust-strip-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .trust-strip-item strong {
-      color: var(--cyan);
-      font-size: 1.1rem;
-    }
-
-    /* SECTIONS */
-    section {
-      position: relative;
-      z-index: 1;
-      padding: 4rem 1.5rem;
-    }
-
-    section.container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-family: var(--D);
-      font-size: clamp(1.75rem, 5vw, 2.75rem);
+    .themes-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.8rem;
       margin-bottom: 2rem;
-      color: var(--text);
-      letter-spacing: -0.01em;
+      color: #f0f6ff;
     }
 
-    section p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-    }
-
-    /* PERKS GRID */
-    .perks-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .perk-card {
-      padding: 2rem;
-      border: 1px solid rgba(34, 211, 238, .2);
-      background: rgba(34, 211, 238, .05);
-      border-radius: var(--r);
-      transition: all 0.3s;
-    }
-
-    .perk-card:hover {
-      border-color: rgba(34, 211, 238, .5);
-      background: rgba(34, 211, 238, .1);
-      box-shadow: 0 0 30px rgba(34, 211, 238, .15);
-    }
-
-    .perk-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-      color: var(--cyan);
-    }
-
-    .perk-card p {
-      font-size: 0.95rem;
-    }
-
-    /* THEMES GRID */
     .themes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1.5rem;
-      margin: 2rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .theme-card {
       padding: 1.5rem;
-      border: 1px solid rgba(168, 85, 247, .2);
-      background: rgba(168, 85, 247, .05);
-      border-radius: var(--r);
+      border-radius: 12px;
+      border: 2px solid;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
       transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-card:nth-child(1) { border-color: #ff6b5b; }
+    .theme-card:nth-child(2) { border-color: #ffa500; }
+    .theme-card:nth-child(3) { border-color: #ffd700; }
+    .theme-card:nth-child(4) { border-color: #00ff88; }
+    .theme-card:nth-child(5) { border-color: #00d4ff; }
+    .theme-card:nth-child(6) { border-color: #7f39fb; }
+    .theme-card:nth-child(7) { border-color: #a855f7; }
+
+    .theme-icon {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .theme-card:nth-child(1) .theme-icon { background: rgba(255, 107, 91, 0.2); color: #ff6b5b; }
+    .theme-card:nth-child(2) .theme-icon { background: rgba(255, 165, 0, 0.2); color: #ffa500; }
+    .theme-card:nth-child(3) .theme-icon { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+    .theme-card:nth-child(4) .theme-icon { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+    .theme-card:nth-child(5) .theme-icon { background: rgba(0, 212, 255, 0.2); color: #00d4ff; }
+    .theme-card:nth-child(6) .theme-icon { background: rgba(127, 57, 251, 0.2); color: #7f39fb; }
+    .theme-card:nth-child(7) .theme-icon { background: rgba(168, 85, 247, 0.2); color: #a855f7; }
+
+    .theme-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
     }
 
     .theme-card:hover {
-      border-color: rgba(168, 85, 247, .5);
-      background: rgba(168, 85, 247, .1);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 107, 91, 0.3);
     }
 
-    .theme-card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--violet);
+    /* TIMELINE */
+    .timeline-section {
+      padding: 4rem 1.5rem;
     }
 
-    .theme-card p {
-      font-size: 0.9rem;
+    .timeline-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #f0f6ff;
     }
 
-    /* EVALUATION TABLE */
-    .eval-table {
-      overflow-x: auto;
-      margin: 2rem 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    thead {
-      background: rgba(34, 211, 238, .1);
-      border-bottom: 2px solid rgba(34, 211, 238, .2);
-    }
-
-    th {
-      padding: 1rem;
-      text-align: left;
-      color: var(--cyan);
-      font-weight: 600;
-    }
-
-    td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
-    }
-
-    tbody tr:hover {
-      background: rgba(34, 211, 238, .05);
-    }
-
-    /* FAQ ACCORDION */
-    .faq-item {
-      margin-bottom: 1rem;
-      border: 1px solid rgba(34, 211, 238, .2);
-      border-radius: var(--r);
-      overflow: hidden;
-    }
-
-    .faq-question {
-      padding: 1.25rem;
-      background: rgba(34, 211, 238, .05);
-      cursor: pointer;
+    .timeline {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      user-select: none;
-      transition: background 0.2s;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 2rem;
+      position: relative;
     }
 
-    .faq-question:hover {
-      background: rgba(34, 211, 238, .1);
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+      z-index: 0;
     }
 
-    .faq-question strong {
-      color: var(--text);
-    }
-
-    .faq-toggle {
-      color: var(--cyan);
-      font-weight: 700;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.open .faq-toggle {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 1.25rem;
-      background: rgba(255, 255, 255, .02);
-      border-top: 1px solid rgba(34, 211, 238, .2);
-      color: var(--muted);
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    /* FOOTER */
-    footer {
+    .timeline-item {
       position: relative;
       z-index: 1;
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      background: var(--surface);
-      padding: 3rem 1.5rem 1.5rem;
-      margin-top: 4rem;
+      text-align: center;
+      flex: 1;
+      min-width: 150px;
     }
 
-    footer .container {
+    .timeline-number {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-family: 'Orbitron', monospace;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      border: 3px solid;
+      background: rgba(255, 165, 0, 0.2);
+    }
+
+    .timeline-item:nth-child(1) .timeline-number { border-color: #ff6b5b; background: rgba(255, 107, 91, 0.2); }
+    .timeline-item:nth-child(2) .timeline-number { border-color: #ffa500; background: rgba(255, 165, 0, 0.2); }
+    .timeline-item:nth-child(3) .timeline-number { border-color: #00d4ff; background: rgba(0, 212, 255, 0.2); }
+    .timeline-item:nth-child(4) .timeline-number { border-color: #ffd700; background: rgba(255, 215, 0, 0.2); }
+
+    .timeline-date {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-label {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #f0f6ff;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    /* INFO CARDS */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+    .info-card {
+      padding: 2rem;
+      border-radius: 12px;
+      border: 3px solid;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
     }
 
-    .footer-section h4 {
-      color: var(--cyan);
-      margin-bottom: 0.75rem;
+    .info-card.prize {
+      border-color: #ffa500;
+      background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 91, 0.1));
+    }
+
+    .info-card.perks {
+      border-color: #00d4ff;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(127, 57, 251, 0.1));
+    }
+
+    .info-card-title {
+      font-family: 'Orbitron', monospace;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: #00d4ff;
     }
 
-    .footer-section a {
-      color: var(--muted);
-      text-decoration: none;
-      display: block;
+    .info-card.prize .info-card-title {
+      color: #ffa500;
+    }
+
+    .info-card-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffd700;
+      margin-bottom: 1rem;
+    }
+
+    .info-card-desc {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 165, 0, 0.3);
+    }
+
+    /* PERKS GRID */
+    .perks-section {
+      padding: 4rem 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .section-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #f0f6ff;
+    }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .perk-item {
+      padding: 1.5rem;
+      border-left: 4px solid #00d4ff;
+      background: rgba(0, 212, 255, 0.05);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .perk-item:nth-child(2) { border-left-color: #ffa500; background: rgba(255, 165, 0, 0.05); }
+    .perk-item:nth-child(3) { border-left-color: #00ff88; background: rgba(0, 255, 136, 0.05); }
+    .perk-item:nth-child(4) { border-left-color: #a855f7; background: rgba(168, 85, 247, 0.05); }
+
+    .perk-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .perk-title {
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      color: #f0f6ff;
+    }
+
+    .perk-desc {
       font-size: 0.9rem;
-      transition: color 0.2s;
+      color: #cbd5e1;
     }
 
-    .footer-section a:hover {
-      color: var(--cyan);
+    .perk-item:hover {
+      transform: translateX(5px);
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      padding-top: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    /* UTILITIES */
-    .text-center {
+    /* REGISTRATION BOX */
+    .registration-box {
+      padding: 3rem 1.5rem;
       text-align: center;
     }
 
-    .mt-4 { margin-top: 2rem; }
+    .registration-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 107, 91, 0.15));
+      border: 3px solid #ffa500;
+    }
+
+    .registration-label {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .registration-date {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ffd700;
+      margin-bottom: 1rem;
+    }
+
+    .registration-desc {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 1.5rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: #00d4ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffa500;
+    }
 
     /* RESPONSIVE */
-    @media (max-width: 640px) {
-      section {
-        padding: 2rem 1rem;
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 1rem;
       }
 
       .hero {
-        padding: 4rem 1rem 2rem;
-        margin-top: 3.5rem;
+        padding: 6rem 1rem 2rem;
       }
 
-      .trust-strip {
-        gap: 1rem;
+      .hero-title {
+        font-size: 2rem;
       }
 
-      .perks-grid,
-      .themes-grid {
-        grid-template-columns: 1fr;
+      .timeline::before {
+        display: none;
       }
 
-      table {
-        font-size: 0.8rem;
+      .timeline {
+        flex-direction: column;
+        gap: 3rem;
       }
-
-      th, td {
-        padding: 0.5rem 0.75rem;
-      }
-    }
-
-    /* ERROR HANDLING */
-    .error-message {
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: var(--r);
-      background: rgba(239, 68, 68, .1);
-      border: 1px solid rgba(239, 68, 68, .3);
-      color: #fca5a5;
-    }
-
-    .loading {
-      display: inline-block;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* HIDE DEFAULTS */
-    nav, footer {
-      display: flex !important;
     }
   </style>
 </head>
 <body>
-  <div class="grid-backdrop" aria-hidden="true"></div>
+  <!-- VIDEO BACKGROUND -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="/Futuristic_AI_Hand_Connection_Animation.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
 
   <!-- NAVBAR -->
-  <nav role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav-brand">
-      <span>AI Synergy</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#themes">Themes</a></li>
-      <li><a href="#rounds">Rounds</a></li>
-      <li><a href="#perks">Perks</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="nav-cta" target="_blank" rel="noopener noreferrer">Register Now</a>
+  <nav>
+    <div class="nav-brand">AI SYNERGY</div>
+    <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="nav-cta" target="_blank">Register</a>
   </nav>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Think with AI. Build beyond it.</h1>
-        <p class="hero-subtitle">Investigate real-world cases, discover the problem worth solving, and turn Human–AI reasoning into a solution that survives changing conditions.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-header">IN PARTNERSHIP WITH GWALIOR AI SUMMIT</div>
+    <h1 class="hero-title">AI SYNERGY HACKATHON</h1>
+    <p class="hero-subtitle">Think with AI. Build beyond it.</p>
+    <p class="hero-subtitle">Find the problem. Brainstorm with AI. Build the solution.</p>
 
-        <div class="hero-meta">
-          <div class="hero-meta-item">29–30 October 2026</div>
-          <div class="hero-meta-item">ABV-IIITM Gwalior</div>
-          <div class="hero-meta-item">₹1,00,000 Prize Pool*</div>
-          <div class="hero-meta-item">Human–AI Problem Solving • Live Building • Adaptation • Demonstration</div>
-        </div>
-
-        <div class="hero-cta-group">
-          <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Register Now</a>
-          <a href="#about" class="btn btn-secondary">Explore the Challenge</a>
-        </div>
-
-        <small style="color: var(--muted); display: block; margin-top: 1rem;">*Prize pool publication is subject to final organizer/sponsor confirmation before production launch.</small>
-      </div>
-
-      <div class="hero-image">
-        <picture>
-          <source media="(max-width: 767px)" srcset="/assets/hero-campus-source.png" />
-          <img src="/assets/hero-campus-source.png"
-               alt="ABV-IIITM Gwalior campus featured for AI Synergy Hackathon 2026"
-               width="1920"
-               height="557"
-               onerror="this.style.display='none'; document.querySelector('.hero-image').style.display='none'; console.error('Hero image failed to load');" />
-        </picture>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <div class="trust-strip" id="trust-strip">
-      <div class="trust-strip-item">
-        <strong>7</strong>
-        <span>AI Themes</span>
-      </div>
-      <div class="trust-strip-item">
-        <strong>2–4</strong>
-        <span>Member Teams</span>
-      </div>
-      <div class="trust-strip-item">
-        <strong>Online</strong>
-        <span>Elimination</span>
-      </div>
-      <div class="trust-strip-item">
-        <strong>On-Campus</strong>
-        <span>Build Round</span>
-      </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">29–30 OCTOBER 2026</div>
+      <div class="hero-meta-item">ABV-IIITM Gwalior, Morena Link Rd. Campus</div>
     </div>
 
-    <!-- WHY DIFFERENT -->
-    <section id="about" class="container">
-      <h2>Why AI Synergy is different</h2>
-      <p>This is <strong>not another "build an AI app" hackathon</strong>.</p>
-      <p>Most challenges tell you the problem and ask for a solution. Here, teams are expected to investigate an ambiguous real-world situation, decide <strong>what the actual problem is</strong>, use evidence to challenge assumptions, work with AI critically, and justify why their chosen solution deserves to exist.</p>
+    <div class="cta-group">
+      <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank">Register Now</a>
+      <a href="#themes" class="btn btn-secondary">Explore Themes</a>
+    </div>
+  </section>
 
-      <div style="margin-top: 2rem; padding: 1.5rem; border-left: 3px solid var(--cyan); background: rgba(34, 211, 238, .05); border-radius: var(--r);">
-        <p style="font-size: 0.95rem; color: var(--text);"><strong>The Journey:</strong> Case → Investigation → Problem Discovery → AI Collaboration → Decision → Solution → Build → Twist → Adapt → Demonstrate</p>
+  <!-- PRIZE & PERKS INFO -->
+  <section class="info-cards">
+    <div class="info-card prize">
+      <div class="info-card-title">TARGET PRIZE POOL</div>
+      <div class="info-card-value">₹1,00,000</div>
+      <div class="info-card-desc">Worth of prizes for winning teams</div>
+    </div>
+
+    <div class="info-card perks">
+      <div class="info-card-title">BEYOND THE PRIZE</div>
+      <div class="info-card-desc">
+        ✦ Pre-Placement Interview opportunities<br>
+        ✦ Research Internships<br>
+        ✦ Startup Networking<br>
+        ✦ Overnight Campus Stay
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PERKS & PRIZES -->
-    <section class="container" id="perks">
-      <h2>More than a hackathon. An opportunity to build what comes next.</h2>
-      <div class="perks-grid">
-        <div class="perk-card">
-          <h3>₹1,00,000 Prize Pool</h3>
-          <p>Compete for a total prize pool worth ₹1,00,000, subject to final organizer/sponsor confirmation.</p>
-        </div>
-        <div class="perk-card">
-          <h3>PPI Opportunities</h3>
-          <p>Top-performing participants may receive Pre-Placement Interview opportunities in collaboration with the Placement Cell, ABV-IIITM Gwalior.</p>
-        </div>
-        <div class="perk-card">
-          <h3>Research Internships</h3>
-          <p>Standout participants may be considered for research internship opportunities with participating research groups.</p>
-        </div>
-        <div class="perk-card">
-          <h3>Meet Startups & Builders</h3>
-          <p>Connect with startup founders, innovators, mentors and ecosystem participants during the on-campus hackathon.</p>
-        </div>
-        <div class="perk-card">
-          <h3>Overnight Hackathon</h3>
-          <p>Shortlisted teams can experience an overnight stay at ABV-IIITM Gwalior during the hackathon.</p>
-        </div>
-        <div class="perk-card">
-          <h3>Certificates & Recognition</h3>
-          <p>Eligible participants receive participation certificates with separate winner/finalist recognition. Release target: within 30 days after the event.</p>
-        </div>
+  <!-- 7 THEMES SHOWCASE -->
+  <section class="themes-showcase" id="themes">
+    <h2 class="themes-title">7 THEMES • CHOOSE A CASE • DEFINE YOUR PROBLEM</h2>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-icon">👥</div>
+        <div class="theme-name">AI for All</div>
       </div>
-    </section>
-
-    <!-- THEMES -->
-    <section id="themes" class="container">
-      <h2>Seven tracks. Real problems. Open possibilities.</h2>
-      <div class="themes-grid">
-        <div class="theme-card">
-          <h4>AI for All</h4>
-          <p>Accessibility, inclusion, learning, productivity and everyday participation.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI in Agriculture</h4>
-          <p>Farm decision support, crop intelligence, supply chains, and farmer-facing services.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI in Healthcare</h4>
-          <p>Health access, workflow support, prevention, monitoring and patient assistance.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI in Tourism</h4>
-          <p>Discovery, travel planning, heritage, local economies and sustainable tourism.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI for Energy & Environment</h4>
-          <p>Energy efficiency, climate resilience, pollution, waste and sustainability.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI in Sports</h4>
-          <p>Performance insight, accessibility, grassroots participation and training.</p>
-        </div>
-        <div class="theme-card">
-          <h4>AI in Governance</h4>
-          <p>Public-service access, citizen information, transparency and decision support.</p>
-        </div>
+      <div class="theme-card">
+        <div class="theme-icon">🌾</div>
+        <div class="theme-name">Agriculture</div>
       </div>
-    </section>
-
-    <!-- ROUNDS -->
-    <section id="rounds" class="container">
-      <h2>From investigation to implementation</h2>
-
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: var(--cyan); margin: 1.5rem 0 1rem;">Round 1 — Case Investigation & Problem Selection</h3>
-        <p><strong>Format:</strong> Online elimination round</p>
-        <p>Your team must show that it can understand the case, identify stakeholders, investigate evidence, formulate competing problems, challenge assumptions, use AI critically, select a meaningful problem, propose a feasible solution, and define what should be built next.</p>
-        <p style="margin-top: 1.5rem;"><strong>Deliverables:</strong> Case Investigation Brief • Solution Presentation • AI Conversation Logs • Decision Trail • Basic SRS • References • Team Contribution Declaration</p>
+      <div class="theme-card">
+        <div class="theme-icon">❤️</div>
+        <div class="theme-name">Healthcare</div>
       </div>
-
-      <div>
-        <h3 style="color: var(--cyan); margin: 1.5rem 0 1rem;">Offline Round — Build, Adapt & Demonstrate</h3>
-        <p><strong>Venue:</strong> ABV-IIITM Gwalior</p>
-        <p>Shortlisted teams build a functional slice of the proposed solution. At a common announced point, organizers introduce new evidence or constraints. Teams must decide whether and how to adapt, then demonstrate and defend their final result live.</p>
+      <div class="theme-card">
+        <div class="theme-icon">🏖️</div>
+        <div class="theme-name">Tourism</div>
       </div>
-
-      <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary mt-4" target="_blank" rel="noopener noreferrer">Read Full Rulebook</a>
-    </section>
-
-    <!-- EVALUATION -->
-    <section class="container">
-      <h2>How teams are evaluated</h2>
-
-      <h3 style="color: var(--cyan); margin: 1.5rem 0 1rem;">Round 1 Evaluation — 100 Points</h3>
-      <div class="eval-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Criterion</th>
-              <th>Weight</th>
-              <th>What judges look for</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Problem Diagnosis & Selection</td>
-              <td>25%</td>
-              <td>Depth of case understanding, competing problem statements, justification</td>
-            </tr>
-            <tr>
-              <td>Evidence & Investigation Quality</td>
-              <td>20%</td>
-              <td>Source quality, verification, assumptions, uncertainty handling</td>
-            </tr>
-            <tr>
-              <td>Human–AI Collaboration</td>
-              <td>25%</td>
-              <td>Purposeful AI use for exploration, critique, verification and decisions</td>
-            </tr>
-            <tr>
-              <td>Solution / SRS Quality</td>
-              <td>20%</td>
-              <td>Feasibility, workflow clarity, requirements, AI/human responsibilities</td>
-            </tr>
-            <tr>
-              <td>Context, Ethics & Accountability</td>
-              <td>10%</td>
-              <td>Privacy, fairness, inclusion, risks, safeguards, oversight</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="theme-card">
+        <div class="theme-icon">⚡</div>
+        <div class="theme-name">Energy & Environment</div>
       </div>
-
-      <h3 style="color: var(--cyan); margin: 2rem 0 1rem;">Offline Round Evaluation — 100 Points</h3>
-      <div class="eval-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Criterion</th>
-              <th>Weight</th>
-              <th>What judges look for</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Execution / Working Prototype</td>
-              <td>30%</td>
-              <td>Whether the core workflow works and addresses the selected problem</td>
-            </tr>
-            <tr>
-              <td>Adaptation to New Constraint</td>
-              <td>20%</td>
-              <td>Quality of reasoning and implementation after the twist</td>
-            </tr>
-            <tr>
-              <td>AI Orchestration / Synergy</td>
-              <td>20%</td>
-              <td>Effective division of work between people, models and tools</td>
-            </tr>
-            <tr>
-              <td>Evaluation, Testing & Safeguards</td>
-              <td>20%</td>
-              <td>Tests, failure cases, robustness, limitations and safety</td>
-            </tr>
-            <tr>
-              <td>Communication & Team Ownership</td>
-              <td>10%</td>
-              <td>Clear explanation, ownership, technical understanding</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="theme-card">
+        <div class="theme-icon">⚽</div>
+        <div class="theme-name">Sports</div>
       </div>
-
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--muted);"><strong>Final ranking formula:</strong> 30% Round 1 + 70% Offline Round</p>
-    </section>
-
-    <!-- ELIGIBILITY -->
-    <section id="eligibility" class="container">
-      <h2>Who can participate?</h2>
-      <div style="display: grid; gap: 1.5rem; margin-top: 2rem;">
-        <div style="padding: 1.5rem; background: rgba(168, 85, 247, .05); border: 1px solid rgba(168, 85, 247, .2); border-radius: var(--r);">
-          <h3 style="color: var(--violet); margin-bottom: 0.75rem;">Working Team Rules</h3>
-          <ul style="list-style: none; color: var(--muted); line-height: 2;">
-            <li>✓ Team size: 2–4 members</li>
-            <li>✓ UG and PG students may participate</li>
-            <li>✓ Cross-college teams are allowed</li>
-            <li>✓ Interdisciplinary teams are encouraged</li>
-          </ul>
-        </div>
-
-        <div style="padding: 1.5rem; background: rgba(34, 211, 238, .05); border: 1px solid rgba(34, 211, 238, .2); border-radius: var(--r);">
-          <h3 style="color: var(--cyan); margin-bottom: 0.75rem;">What Matters More Than Your Stack</h3>
-          <p>You need to demonstrate curiosity, investigation, evidence, critical reasoning, collaboration, implementation ability, and accountability.</p>
-        </div>
+      <div class="theme-card">
+        <div class="theme-icon">🏛️</div>
+        <div class="theme-name">Governance</div>
       </div>
+    </div>
+  </section>
 
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--muted);"><strong>Final eligibility is governed by the official rulebook and registration conditions.</strong></p>
-
-      <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary mt-4" target="_blank" rel="noopener noreferrer">Check Eligibility & Register</a>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="container">
-      <h2>Frequently asked questions</h2>
-      <div id="faq-container" style="max-width: 800px; margin: 2rem auto;">
-        <!-- FAQ items will be populated by JavaScript -->
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <h2 class="timeline-title">Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">1</div>
+        <div class="timeline-date">10 OCT</div>
+        <div class="timeline-label">Registration</div>
+        <div class="timeline-desc">Registration Deadline</div>
       </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="container text-center" style="padding: 6rem 1.5rem;">
-      <h2>Find the problem worth solving. Then prove your solution can survive reality.</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">You will not be judged only on what AI generated.<br><strong>You will be judged on what you investigated, questioned, verified, rejected, decided, built — and how you adapted.</strong></p>
-
-      <div style="margin-bottom: 2rem; color: var(--text); font-size: 1.05rem;">
-        <strong>AI Synergy Hackathon 2026</strong><br>
-        29–30 October 2026 · ABV-IIITM Gwalior
+      <div class="timeline-item">
+        <div class="timeline-number">2</div>
+        <div class="timeline-date">12 OCT</div>
+        <div class="timeline-label">Round 1</div>
+        <div class="timeline-desc">Online Submission</div>
       </div>
-
-      <div class="hero-cta-group">
-        <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Register Now</a>
-        <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Read the Rulebook</a>
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-date">SHORTLIST</div>
+        <div class="timeline-label">Round 2</div>
+        <div class="timeline-desc">On-Campus Building</div>
       </div>
-    </section>
-  </main>
+      <div class="timeline-item">
+        <div class="timeline-number">4</div>
+        <div class="timeline-date">29-30 OCT</div>
+        <div class="timeline-label">Finale</div>
+        <div class="timeline-desc">On Campus ABV-IIITM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERKS -->
+  <section class="perks-section">
+    <h2 class="section-title">MORE THAN A HACKATHON</h2>
+    <div class="perks-grid">
+      <div class="perk-item">
+        <div class="perk-icon">🏆</div>
+        <div class="perk-title">Prize Pool</div>
+        <div class="perk-desc">Compete for ₹1,00,000 in total prizes</div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">💼</div>
+        <div class="perk-title">PPI Opportunities</div>
+        <div class="perk-desc">Pre-Placement Interviews with Placement Cell</div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">📚</div>
+        <div class="perk-title">Research Internships</div>
+        <div class="perk-desc">Opportunities with research partners</div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">🚀</div>
+        <div class="perk-title">Startup Networking</div>
+        <div class="perk-desc">Meet founders & ecosystem partners</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION CTA -->
+  <section class="registration-box">
+    <div class="registration-content">
+      <div class="registration-label">Registration Closes</div>
+      <div class="registration-date">10 OCTOBER 2026</div>
+      <div class="registration-desc">
+        ✦ Teams of 2–4 members<br>
+        ✦ Open to UG & PG students<br>
+        ✦ Cross-college teams welcome<br>
+        ✦ No prior AI experience required
+      </div>
+      <div class="cta-group" style="margin-top: 2rem;">
+        <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank">SCAN TO REGISTER</a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Event</h4>
-          <a href="#about">About</a>
-          <a href="#themes">Themes</a>
-          <a href="#rounds">Rounds</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank">Register</a>
-          <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank">Rulebook</a>
-          <a href="mailto:contact@sangillence.com">Contact</a>
-        </div>
-        <div class="footer-section">
-          <h4>Venue</h4>
-          <p style="color: var(--muted); font-size: 0.9rem;">Atal Bihari Vajpayee Indian Institute of Information Technology and Management<br>Morena Link Road<br>Gwalior, Madhya Pradesh 474015</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Sangillence × ABV-IIITM Gwalior. All rights reserved. | <a href="/privacy-policy.html" style="color: var(--cyan);">Privacy Policy</a> | <a href="/terms-conditions.html" style="color: var(--cyan);">Terms & Conditions</a></p>
-      </div>
+    <div class="footer-links">
+      <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank">Register</a>
+      <a href="mailto:contact@sangillence.com">Contact</a>
+      <span>© 2026 Sangillence × ABV-IIITM Gwalior</span>
     </div>
+    <p>Atal Bihari Vajpayee IIITM Gwalior | Morena Link Road | Gwalior 474015</p>
   </footer>
 
   <script>
-    // ERROR HANDLING & UTILITIES
-    const errorLog = [];
-
-    function logError(message, error = null) {
-      const timestamp = new Date().toISOString();
-      const errorEntry = { timestamp, message, error: error?.toString() };
-      errorLog.push(errorEntry);
-      console.error(`[${timestamp}] ${message}`, error);
-    }
-
-    function handleImageError(img) {
-      img.onerror = null;
-      if (!img.src.includes('placeholder')) {
-        img.src = '/assets/placeholder.png';
-      }
-      logError(`Image failed to load: ${img.src}`);
-    }
-
-    // SMOOTH SCROLL
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const target = document.querySelector(link.getAttribute('href'));
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -977,109 +752,10 @@
       });
     });
 
-    // FAQ FUNCTIONALITY
-    const faqData = [
-      {
-        question: "What is AI Synergy Hackathon 2026?",
-        answer: "AI Synergy is a case-first Human–AI problem-solving hackathon. Teams investigate a situation, determine what problem is worth solving, collaborate critically with AI, propose a solution and, if shortlisted, build and adapt that solution during the on-campus round."
-      },
-      {
-        question: "Do we receive a fixed problem statement?",
-        answer: "The challenge is designed around cases/themes rather than a completely pre-defined engineering specification. Teams are expected to investigate and justify their own problem selection."
-      },
-      {
-        question: "Can we use ChatGPT, Gemini, Claude or other AI tools?",
-        answer: "Yes. Teams may use appropriate AI tools/models subject to the event rules. Evaluation focuses on how intelligently and responsibly AI is used, not on model brand or number of prompts."
-      },
-      {
-        question: "Is a complete application required in Round 1?",
-        answer: "No. Round 1 focuses on investigation, problem selection, evidence, Human–AI reasoning, and implementation planning. A prototype can strengthen feasibility where appropriate."
-      },
-      {
-        question: "What should AI logs contain?",
-        answer: "Submit authentic interactions that materially contributed to your work: investigation, alternatives, critique, corrections, verification and important decisions. Do not submit irrelevant conversations purely to increase prompt count."
-      },
-      {
-        question: "What happens in the offline round?",
-        answer: "Shortlisted teams build a working solution at ABV-IIITM Gwalior. During the round, organizers introduce new evidence or a constraint. Teams must evaluate the change, adapt where necessary, test the revised approach and demonstrate it live."
-      },
-      {
-        question: "Will accommodation be provided?",
-        answer: "Shortlisted offline participants are expected to receive an overnight-stay arrangement at ABV-IIITM Gwalior during the hackathon, subject to final accommodation rules and capacity."
-      },
-      {
-        question: "Is travel reimbursement included?",
-        answer: "Travel reimbursement is currently unspecified. Do not make travel bookings based on an assumption of reimbursement unless organizers publish a separate policy."
-      },
-      {
-        question: "Where can we read the complete rules?",
-        answer: "Visit the official Unstop page for the complete rulebook and registration information."
-      }
-    ];
-
-    function initializeFAQ() {
-      const faqContainer = document.getElementById('faq-container');
-      if (!faqContainer) return;
-
-      faqContainer.innerHTML = faqData.map((item, index) => `
-        <div class="faq-item" data-index="${index}">
-          <div class="faq-question">
-            <strong>${item.question}</strong>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>${item.answer}</p>
-          </div>
-        </div>
-      `).join('');
-
-      document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-          const item = question.closest('.faq-item');
-          item.classList.toggle('open');
-        });
-      });
-    }
-
-    // INITIALIZE ON LOAD
-    window.addEventListener('DOMContentLoaded', () => {
-      try {
-        initializeFAQ();
-
-        // Validate all images
-        document.querySelectorAll('img').forEach(img => {
-          img.addEventListener('error', () => handleImageError(img));
-        });
-
-        console.log('Page initialized successfully');
-      } catch (error) {
-        logError('Failed to initialize page', error);
-      }
-    });
-
-    // HANDLE EXTERNAL LINK ERRORS
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        try {
-          // Validate URL format
-          new URL(link.href);
-        } catch (error) {
-          logError(`Invalid URL: ${link.href}`, error);
-          e.preventDefault();
-        }
-      });
-    });
-
-    // ANALYTICS (PLACEHOLDER)
-    function trackEvent(eventName, properties = {}) {
-      console.log(`Analytics: ${eventName}`, properties);
-    }
-
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-      btn.addEventListener('click', () => {
-        trackEvent('register_click', {
-          source: btn.closest('section')?.id || 'unknown'
-        });
+    // Track registrations
+    document.querySelectorAll('a[href*="unstop.com"]').forEach(link => {
+      link.addEventListener('click', () => {
+        console.log('Registration clicked from:', link.closest('section')?.querySelector('h2')?.textContent || 'Navigation');
       });
     });
   </script>
