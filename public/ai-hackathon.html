@@ -4,569 +4,723 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="/assets/sangillenceLogo.png" />
-  <title>Gwalior AI Summit 2026 | Sangillence</title>
-  <meta name="description" content="Gwalior AI Summit 2026 - AI Synergy Hackathon at ABV-IIITM Gwalior. Think with AI. Build beyond it." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <title>Gwalior AI Summit 2026 | AI Synergy Hackathon</title>
+  <meta name="description" content="Gwalior AI Summit 2026 – AI Synergy Hackathon at ABV-IIITM Gwalior, 29–30 October 2026. Think with AI. Build beyond it. ₹1,00,000 prize pool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gwalior AI Summit 2026 – AI Synergy Hackathon" />
+  <meta property="og:description" content="Sangillence × ABV-IIITM Gwalior. 29–30 October 2026. Find the problem, brainstorm with AI, build the solution." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #020b1a;
+      --bg2: #041529;
+      --card: rgba(6, 22, 44, .72);
+      --line: rgba(120, 170, 255, .14);
+      --w: #f0f6ff;
+      --m: #8aa6c8;
+      --cyan: #4fd8ff;
+      --gold: #f5c66b;
+      --c1: #ff5f6d;
+      --c2: #ffa84b;
+      --c3: #ffe066;
+      --c4: #6ee7a0;
+      --c5: #4fc3f7;
+      --c6: #a78bfa;
+      --rainbow: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6));
+      --D: 'Orbitron', monospace;
+      --B: 'Exo 2', sans-serif;
+      --H: 'Poppins', 'Exo 2', sans-serif;
+      --r: 16px;
     }
 
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
-      background: linear-gradient(135deg, #0a0e27 0%, #0f1535 100%);
-      color: #f0f6ff;
-      font-family: 'Exo 2', sans-serif;
-      line-height: 1.6;
-      position: relative;
+      background: var(--bg);
+      color: var(--w);
+      font-family: var(--B);
+      line-height: 1.65;
       overflow-x: hidden;
-      min-height: 100vh;
     }
+    img { max-width: 100%; }
+    a { color: inherit; }
 
-    /* STARFIELD BACKGROUND */
-    .starfield {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
+    /* BACKGROUND LAYERS */
+    .bg-video {
+      position: fixed; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; pointer-events: none;
+      filter: brightness(.6) saturate(1.1);
     }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: twinkle 3s infinite;
+    .bg-overlay {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(79, 195, 247, .12), transparent 70%),
+        linear-gradient(180deg, rgba(2, 11, 26, .25) 0%, rgba(2, 11, 26, .55) 60%, rgba(2, 11, 26, .85) 100%);
     }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 3rem;
-      background: rgba(10, 14, 39, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(100, 150, 255, 0.1);
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-    }
-
-    .nav-brand {
-      font-family: 'Exo 2', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #cbd5e1;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 3rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #7a9cc0;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      font-family: 'Orbitron', monospace;
-    }
-
-    .nav-links a:hover {
-      color: #00d4ff;
-    }
-
-    .nav-links a.active {
-      color: #4a7ba7;
-      background: rgba(74, 123, 167, 0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-    }
+    #cv { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    main { position: relative; z-index: 1; }
 
     /* HERO */
     .hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center;
-      padding: 6rem 2rem 4rem;
+      padding: 5rem 1.25rem 6rem;
       position: relative;
-      z-index: 1;
     }
-
-    .hero-icon {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 3rem;
-      opacity: 0.9;
-      animation: float 3s ease-in-out infinite;
+    .college-logo {
+      width: 96px; height: auto; margin-bottom: 2.2rem;
+      filter: drop-shadow(0 0 22px rgba(79, 195, 247, .35));
+      animation: float 5s ease-in-out infinite;
     }
+    @keyframes float { 50% { transform: translateY(-10px); } }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+    .h-gwalior, .h-summit {
+      display: block;
+      font-family: var(--H);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .01em;
     }
-
-    .hero-title-main {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(3rem, 12vw, 6rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-      letter-spacing: -2px;
-    }
-
-    .hero-title-rainbow {
-      background: linear-gradient(90deg, #ff6b5b, #ffa500, #ffd700, #00ff88, #00d4ff, #7f39fb);
-      -webkit-background-clip: text;
+    .h-gwalior {
+      font-size: clamp(3.4rem, 13vw, 7.5rem);
+      background: var(--rainbow);
+      -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
+      filter: drop-shadow(0 4px 28px rgba(167, 139, 250, .25));
     }
-
-    .hero-title-white {
-      color: #f0f6ff;
-      display: block;
+    .h-summit {
+      font-size: clamp(3rem, 11.5vw, 6.6rem);
+      color: var(--w);
+      text-shadow: 0 6px 40px rgba(0, 0, 0, .5);
+      margin-top: .1em;
     }
-
-    .hero-year {
-      font-family: 'Orbitron', monospace;
-      font-size: clamp(2rem, 8vw, 4rem);
-      font-weight: 900;
-      color: #f0f6ff;
-      margin-top: 1rem;
+    .h-year-row {
+      display: flex; align-items: center; justify-content: center; gap: 1.1rem;
+      margin-top: .35rem;
     }
+    .h-year {
+      font-family: var(--H); font-weight: 700;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      color: var(--w);
+    }
+    .h-line {
+      position: relative; width: clamp(50px, 12vw, 130px); height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
+    }
+    .h-line.r { background: linear-gradient(90deg, var(--cyan), transparent); }
+    .h-line::after {
+      content: ''; position: absolute; top: -2px; right: 0; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 10px var(--cyan);
+    }
+    .h-line.r::after { left: 0; right: auto; }
 
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: #cbd5e1;
+    .event-pill {
       margin-top: 2rem;
-      font-weight: 300;
+      display: inline-flex; align-items: center; gap: .75rem; flex-wrap: wrap; justify-content: center;
+      padding: .7rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background-image: linear-gradient(rgba(4, 18, 38, .85), rgba(4, 18, 38, .85)), var(--rainbow);
+      background-origin: border-box; background-clip: padding-box, border-box;
+      font-family: var(--D); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase;
     }
-
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 3rem;
+    .event-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--m); }
+    .tagline {
+      margin-top: 1.4rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      color: #d6e4f7; font-weight: 300;
     }
+    .tagline strong { font-weight: 600; color: var(--w); }
 
+    .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2.2rem; }
     .btn {
-      padding: 1rem 2.5rem;
-      border-radius: 8px;
-      font-family: 'Orbitron', monospace;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s;
-      border: none;
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .95rem 2rem; border-radius: 999px;
+      font-family: var(--D); font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: transform .25s, box-shadow .25s, background-position .4s;
+    }
+    .btn svg { width: 16px; height: 16px; }
+    .btn-grad {
+      color: #081226;
+      background: var(--rainbow); background-size: 200% auto;
+      box-shadow: 0 8px 30px rgba(255, 168, 75, .25), 0 8px 30px rgba(167, 139, 250, .25);
+    }
+    .btn-grad:hover { transform: translateY(-3px); background-position: 100% center; box-shadow: 0 12px 40px rgba(79, 195, 247, .4); }
+    .btn-ghost {
+      color: var(--w);
+      border: 1px solid transparent;
+      background-image: linear-gradient(rgba(4, 18, 38, .8), rgba(4, 18, 38, .8)), var(--rainbow);
+      background-origin: border-box; background-clip: padding-box, border-box;
+    }
+    .btn-ghost:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(79, 195, 247, .2); }
+
+    .countdown { margin-top: 1.6rem; font-size: .85rem; color: var(--m); letter-spacing: .06em; }
+    .countdown b { color: var(--gold); font-weight: 600; }
+    .organizers {
+      margin-top: 2.4rem; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--m);
+    }
+    .organizers img { height: 34px; width: auto; }
+    .organizers .x { color: var(--w); opacity: .6; }
+
+    .scroll-hint {
+      position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%);
+      font-family: var(--D); font-size: .58rem; letter-spacing: .2em; color: var(--m);
+      display: flex; flex-direction: column; align-items: center; gap: .3rem;
+      animation: bounce 2s infinite; text-decoration: none;
+    }
+    @keyframes bounce { 50% { transform: translate(-50%, 6px); } }
+
+    /* STAT STRIP */
+    .stats {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      background: rgba(4, 21, 41, .82); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .stat { padding: 1.6rem .8rem; text-align: center; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat-n {
+      display: block; font-family: var(--D); font-weight: 900; font-size: clamp(1.2rem, 2.6vw, 1.75rem);
+      background: var(--rainbow); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-l { display: block; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--m); margin-top: .2rem; }
+
+    .rainbow-rule { position: relative; z-index: 1; height: 2px; background: var(--rainbow); opacity: .55; }
+
+    /* SECTIONS */
+    .sec { padding: 6rem 1.25rem; }
+    .wrap { max-width: 1140px; margin: 0 auto; }
+    .sec-head { text-align: center; margin-bottom: 3rem; }
+    .tag {
+      display: inline-block; font-family: var(--D); font-size: .66rem; letter-spacing: .32em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: .8rem;
+    }
+    .title { font-family: var(--D); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.5rem); line-height: 1.2; }
+    .g {
+      background: var(--rainbow); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .lead { color: var(--m); max-width: 680px; margin: 1rem auto 0; font-size: 1rem; }
+    .quote {
+      font-family: var(--H); font-weight: 600; font-size: clamp(1.25rem, 3vw, 1.85rem); line-height: 1.4;
+      max-width: 820px; margin: 0 auto;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #4a7ba7, #6ba3d1);
-      color: white;
-      box-shadow: 0 0 20px rgba(74, 123, 167, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #5a8bb7, #7bb3e1);
-      box-shadow: 0 0 30px rgba(74, 123, 167, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid #4a7ba7;
-      color: #4a7ba7;
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(74, 123, 167, 0.1);
-      border-color: #6ba3d1;
-      color: #6ba3d1;
-    }
-
-    /* CONTENT SECTIONS */
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-family: 'Orbitron', monospace;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #f0f6ff;
-      text-align: center;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
+    /* CARDS */
+    .grid { display: grid; gap: 1.2rem; }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g2 { grid-template-columns: repeat(2, 1fr); }
     .card {
-      padding: 2rem;
-      background: rgba(74, 123, 167, 0.08);
-      border: 1px solid rgba(100, 150, 255, 0.2);
-      border-radius: 12px;
-      transition: all 0.3s;
+      position: relative; overflow: hidden;
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--line); border-radius: var(--r);
+      padding: 1.6rem 1.5rem;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
     }
-
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent, var(--rainbow));
+    }
     .card:hover {
-      background: rgba(74, 123, 167, 0.15);
-      border-color: rgba(100, 150, 255, 0.4);
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      border-color: rgba(160, 200, 255, .3);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .35), 0 0 34px color-mix(in srgb, var(--ac, #4fc3f7) 22%, transparent);
     }
+    .ico {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 1.1rem;
+      background: color-mix(in srgb, var(--ac, #4fc3f7) 16%, transparent);
+      border: 1px solid color-mix(in srgb, var(--ac, #4fc3f7) 45%, transparent);
+      color: var(--ac, #4fc3f7);
+    }
+    .ico svg { width: 26px; height: 26px; }
+    .card h3 { font-family: var(--D); font-size: .92rem; letter-spacing: .06em; margin-bottom: .45rem; }
+    .card p, .card li { color: var(--m); font-size: .93rem; }
+    .card ul { list-style: none; margin-top: .4rem; }
+    .card li { padding-left: 1.2rem; position: relative; margin: .35rem 0; }
+    .card li::before {
+      content: ''; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 2px;
+      background: var(--ac, var(--cyan)); transform: rotate(45deg);
+    }
+    .card-cta { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .card-cta .btn { margin-top: 1rem; padding: .7rem 1.3rem; }
 
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #00d4ff;
-    }
+    .a1 { --ac: var(--c1); --accent: var(--c1); }
+    .a2 { --ac: var(--c2); --accent: var(--c2); }
+    .a3 { --ac: var(--c3); --accent: var(--c3); }
+    .a4 { --ac: var(--c4); --accent: var(--c4); }
+    .a5 { --ac: var(--c5); --accent: var(--c5); }
+    .a6 { --ac: var(--c6); --accent: var(--c6); }
+    .a7 { --ac: #f472b6; --accent: #f472b6; }
 
-    .card p {
-      color: #cbd5e1;
-      line-height: 1.8;
+    /* PRIZE HIGHLIGHT */
+    .prize {
+      text-align: center; padding: 2.6rem 1.5rem; margin-bottom: 1.4rem;
+      border-radius: 22px; border: 1px solid transparent;
+      background-image: linear-gradient(rgba(5, 20, 42, .9), rgba(5, 20, 42, .9)), var(--rainbow);
+      background-origin: border-box; background-clip: padding-box, border-box;
     }
+    .prize-amt { font-family: var(--H); font-weight: 800; font-size: clamp(2.8rem, 9vw, 5rem); line-height: 1.05; }
+    .prize small { display: block; color: var(--m); letter-spacing: .2em; text-transform: uppercase; font-size: .72rem; margin-bottom: .5rem; font-family: var(--D); }
+    .prize p { color: var(--m); margin-top: .5rem; }
 
     /* TIMELINE */
-    .timeline {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 3rem 0;
-      position: relative;
+    .timeline { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 820px; margin: 0 auto; }
+    .step p { max-width: 300px; margin: 0 auto; }
+    .timeline::before {
+      content: ''; position: absolute; left: 25%; right: 25%; top: 34px; height: 3px;
+      background: var(--rainbow); border-radius: 3px; opacity: .8;
+    }
+    .step { text-align: center; position: relative; }
+    .node {
+      width: 70px; height: 70px; margin: 0 auto 1.1rem; border-radius: 50%;
+      display: grid; place-items: center; position: relative; z-index: 1;
+      background: var(--bg2); border: 3px solid var(--ac);
+      box-shadow: 0 0 0 6px rgba(2, 11, 26, .9), 0 0 28px color-mix(in srgb, var(--ac) 50%, transparent);
+      font-family: var(--D); font-weight: 900; font-size: 1.3rem; color: var(--ac);
+    }
+    .step .date { font-family: var(--D); font-size: .8rem; letter-spacing: .12em; color: var(--ac); }
+    .step h3 { font-family: var(--D); font-size: 1rem; margin: .3rem 0 .25rem; }
+    .step p { color: var(--m); font-size: .9rem; }
+
+    /* EVALUATION */
+    .crit { margin-top: 1rem; }
+    .crit-row { display: flex; justify-content: space-between; gap: 1rem; font-size: .9rem; color: #c9d8ec; margin-top: .85rem; }
+    .crit-row b { font-family: var(--D); font-size: .8rem; color: var(--ac); }
+    .bar { height: 6px; border-radius: 6px; background: rgba(255, 255, 255, .06); margin-top: .4rem; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: 6px; background: var(--rainbow); width: 0; transition: width 1.2s ease .3s; }
+    .v .bar i { width: var(--w-pct); }
+    .weight {
+      display: inline-block; margin-left: .5rem; padding: .15rem .6rem; border-radius: 999px; font-size: .7rem;
+      font-family: var(--D); letter-spacing: .08em; color: #081226; background: var(--ac); vertical-align: middle;
     }
 
-    .timeline-item {
-      text-align: center;
-      flex: 1;
-      min-width: 150px;
+    /* FAQ */
+    .faq { max-width: 860px; margin: 0 auto; display: grid; gap: .8rem; }
+    .faq details {
+      background: var(--card); backdrop-filter: blur(10px);
+      border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.3rem;
+      transition: border-color .25s;
     }
+    .faq details[open] { border-color: rgba(79, 195, 247, .4); }
+    .faq summary {
+      cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      font-weight: 600; font-size: 1rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: '+'; font-family: var(--D); font-size: 1.2rem; flex-shrink: 0;
+      background: var(--rainbow); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .faq details[open] summary::after { content: '−'; }
+    .faq p { color: var(--m); margin-top: .7rem; font-size: .95rem; }
 
-    .timeline-circle {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 1rem;
-      border: 2px solid #4a7ba7;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #4a7ba7;
-      font-family: 'Orbitron', monospace;
-      background: rgba(74, 123, 167, 0.1);
+    /* FINAL CTA */
+    .final {
+      text-align: center; padding: 4rem 1.5rem; border-radius: 26px; position: relative; overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 95, 109, .18), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(167, 139, 250, .22), transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(79, 195, 247, .12), transparent 60%),
+        rgba(5, 20, 42, .85);
     }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.4rem; }
+    .chip {
+      padding: .45rem 1rem; border-radius: 999px; font-size: .85rem; color: #d6e4f7;
+      background: rgba(255, 255, 255, .05); border: 1px solid var(--line);
+    }
+    .fine { color: var(--m); font-size: .85rem; margin-top: 1.6rem; text-align: center; }
+    .fine a { color: var(--cyan); }
 
-    .timeline-label {
-      font-weight: 600;
-      color: #f0f6ff;
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-date {
-      font-size: 0.85rem;
-      color: #7a9cc0;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(100, 150, 255, 0.1);
-      color: #7a9cc0;
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer a {
-      color: #4a7ba7;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-
-    footer a:hover {
-      color: #00d4ff;
-    }
+    /* REVEAL */
+    .fi { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fi.v { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+    .no-js .fi { opacity: 1; transform: none; }
+    .no-js .bar i { width: var(--w-pct); }
 
     /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.5rem;
-        flex-wrap: wrap;
-        gap: 1rem;
+    @media (max-width: 960px) {
+      .g4, .g3 { grid-template-columns: repeat(2, 1fr); }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .stat:nth-child(3) { border-right: 0; }
+      .stat:nth-child(n+4) { border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 720px) {
+      .timeline { grid-template-columns: 1fr; gap: 1.6rem; }
+      .timeline::before {
+        left: 34px; right: auto; top: 35px; bottom: 35px; width: 3px; height: auto;
+        background: linear-gradient(180deg, var(--c1), var(--c3), var(--c5), var(--c6));
       }
-
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.8rem;
-      }
-
-      .hero {
-        padding: 5rem 1rem 2rem;
-      }
-
-      .hero-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 2rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      section {
-        padding: 2rem 1rem;
-      }
-
-      section h2 {
-        font-size: 1.8rem;
-      }
+      .step { display: grid; grid-template-columns: 70px 1fr; gap: 1.1rem; text-align: left; align-items: center; }
+      .node { margin: 0; }
+      .step p { margin: 0; }
+      .g2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .g4, .g3 { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat, .stat:nth-child(3) { border-right: 1px solid var(--line); border-top: 1px solid var(--line); }
+      .stat:nth-child(2n) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-top: 0; }
+      .stat:last-child { grid-column: span 2; border-right: 0; }
+      .sec { padding: 4.2rem 1rem; }
+      .hero { padding: 4rem 1rem 5.5rem; }
+      .college-logo { width: 72px; margin-bottom: 1.6rem; }
+      .event-pill { font-size: .64rem; letter-spacing: .1em; }
+      .cta-row .btn { width: 100%; justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .fi { opacity: 1; transform: none; }
+      .bar i { width: var(--w-pct); }
     }
   </style>
 </head>
-<body>
-  <!-- STARFIELD BACKGROUND -->
-  <div class="starfield" id="starfield"></div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="/" class="nav-left">
-      <img src="/assets/sangillence-logo.png" alt="Sangillence" class="nav-logo">
-      <span class="nav-brand">Sangillence</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">HOME</a></li>
-      <li><a href="#explora">EXPLORA</a></li>
-      <li><a href="#sobo">SOBO</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#careers">Careers</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
+<body class="no-js">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.300-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+      <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.910a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.950A12.880 12.880 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.350 22.350 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="16" y2="16"/><line x1="16" x2="16" y1="16" y2="16"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    </defs>
+  </svg>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <img src="/assets/college-logo.svg" alt="IIITM" class="hero-icon">
+  <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="/ai_hack.mp4" type="video/mp4" />
+  </video>
+  <div class="bg-overlay"></div>
+  <canvas id="cv" aria-hidden="true"></canvas>
 
-    <h1 class="hero-title-main">
-      <span class="hero-title-rainbow">GWALIOR</span>
-      <span class="hero-title-white">AI SUMMIT</span>
-    </h1>
+  <main>
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <img class="college-logo" src="/assets/college-logo.svg" alt="ABV-IIITM Gwalior" draggable="false" onerror="this.style.display='none'" />
+      <h1>
+        <span class="h-gwalior">GWALIOR</span>
+        <span class="h-summit">AI SUMMIT</span>
+      </h1>
+      <div class="h-year-row" aria-hidden="true">
+        <span class="h-line"></span><span class="h-year">2026</span><span class="h-line r"></span>
+      </div>
 
-    <div class="hero-year">2026</div>
+      <div class="event-pill">
+        <span>AI Synergy Hackathon</span><span class="dot"></span><span>29–30 Oct 2026</span><span class="dot"></span><span>ABV-IIITM Gwalior</span>
+      </div>
+      <p class="tagline"><strong>Think with AI. Build beyond it.</strong><br />Find the problem. Brainstorm with AI. Build the solution.</p>
 
-    <p class="hero-subtitle">Think with AI. Build beyond it.</p>
+      <div class="cta-row">
+        <a class="btn btn-grad js-register" href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank" rel="noopener noreferrer">
+          Register on Unstop <svg aria-hidden="true"><use href="#i-arrow" /></svg>
+        </a>
+        <a class="btn btn-ghost" href="#tracks">Explore Themes</a>
+      </div>
+      <p class="countdown" id="countdown" hidden></p>
 
-    <div class="cta-buttons">
-      <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank">Register Now</a>
-      <a href="#about" class="btn btn-secondary">Learn More</a>
+      <div class="organizers">
+        <img src="/assets/sangillence-logo.png" alt="" onerror="this.remove()" />
+        <span>Sangillence</span><span class="x">×</span><span>ABV-IIITM Gwalior</span>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="Scroll to About">
+        <svg width="18" height="10" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 1l8 8 8-8" stroke="#4fd8ff" stroke-width="2" fill="none" stroke-linecap="round" /></svg>
+        SCROLL
+      </a>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats" style="position:relative">
+      <div class="stat"><span class="stat-n">₹1,00,000</span><span class="stat-l">Prize Pool</span></div>
+      <div class="stat"><span class="stat-n">7</span><span class="stat-l">Themes</span></div>
+      <div class="stat"><span class="stat-n">2</span><span class="stat-l">Rounds</span></div>
+      <div class="stat"><span class="stat-n">2–4</span><span class="stat-l">Team Size</span></div>
+      <div class="stat"><span class="stat-n">29–30 Oct</span><span class="stat-l">On Campus</span></div>
     </div>
-  </section>
+    <div class="rainbow-rule"></div>
 
-  <!-- MAIN CONTENT -->
-  <div class="content">
-    <!-- ABOUT SECTION -->
-    <section id="about">
-      <h2>About AI Synergy Hackathon</h2>
-      <div class="section-grid">
-        <div class="card">
-          <h3>🎯 The Challenge</h3>
-          <p>Investigate real-world cases. Discover the problem worth solving. Think with AI, challenge its suggestions, and turn your reasoning into a solution.</p>
+    <!-- ABOUT -->
+    <section class="sec" id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">About the Event</span>
+          <p class="quote fi d1">“We don't test what you know. We measure <span class="g">how you think with AI.</span>”</p>
+          <p class="lead fi d2">AI Synergy is a case-first Human–AI problem-solving hackathon at the Gwalior AI Summit. Teams investigate a real situation, decide which problem is worth solving, collaborate critically with AI and — if shortlisted — build and adapt their solution live on campus.</p>
         </div>
-        <div class="card">
-          <h3>🏆 Rewards</h3>
-          <p>Compete for ₹1,00,000 in prizes. Win PPI opportunities with ABV-IIITM Placement Cell, research internships, and startup networking.</p>
+        <div class="grid g4">
+          <div class="card a1 fi d1"><div class="ico"><svg><use href="#i-compass" /></svg></div><h3>Investigate</h3><p>Understand the case, its stakeholders and the evidence behind it.</p></div>
+          <div class="card a3 fi d2"><div class="ico"><svg><use href="#i-bot" /></svg></div><h3>Think with AI</h3><p>Use AI to explore, critique and challenge — not just to generate.</p></div>
+          <div class="card a4 fi d3"><div class="ico"><svg><use href="#i-file" /></svg></div><h3>Decide</h3><p>Select and justify the problem that matters most.</p></div>
+          <div class="card a6 fi d4"><div class="ico"><svg><use href="#i-rocket" /></svg></div><h3>Build</h3><p>Turn your reasoning into a working prototype on campus.</p></div>
         </div>
-        <div class="card">
-          <h3>📍 Location</h3>
-          <p>ABV-IIITM Gwalior, Morena Link Road. A world-class institute hosting India's most exciting AI innovation hackathon.</p>
+      </div>
+    </section>
+    <div class="rainbow-rule"></div>
+
+    <!-- TRACKS -->
+    <section class="sec" id="tracks">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">Choose a Case · Define Your Problem</span>
+          <h2 class="title fi d1"><span class="g">7 Themes</span> to Build For</h2>
+        </div>
+        <div class="grid g4">
+          <div class="card a1 fi d1"><div class="ico"><svg><use href="#i-users" /></svg></div><h3>AI for All</h3><p>Accessibility, inclusion, learning and productivity.</p></div>
+          <div class="card a4 fi d2"><div class="ico"><svg><use href="#i-sprout" /></svg></div><h3>Agriculture</h3><p>Farm decision support, crop intelligence and supply chains.</p></div>
+          <div class="card a7 fi d3"><div class="ico"><svg><use href="#i-heart" /></svg></div><h3>Healthcare</h3><p>Health access, clinical workflows and patient support.</p></div>
+          <div class="card a5 fi d4"><div class="ico"><svg><use href="#i-compass" /></svg></div><h3>Tourism</h3><p>Travel experiences, heritage and sustainable tourism.</p></div>
+          <div class="card a3 fi d1"><div class="ico"><svg><use href="#i-zap" /></svg></div><h3>Energy &amp; Environment</h3><p>Sustainability, climate resilience and clean energy.</p></div>
+          <div class="card a2 fi d2"><div class="ico"><svg><use href="#i-activity" /></svg></div><h3>Sports</h3><p>Performance analytics, grassroots participation and fans.</p></div>
+          <div class="card a6 fi d3"><div class="ico"><svg><use href="#i-landmark" /></svg></div><h3>Governance</h3><p>Public services, transparency and citizen-first systems.</p></div>
+          <div class="card card-cta fi d4">
+            <h3>Pick one. Go deep.</h3><p>Every theme comes with real cases — your job is to find the problem worth solving.</p>
+            <a class="btn btn-ghost js-register" href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank" rel="noopener noreferrer">Register</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="rainbow-rule"></div>
+
+    <!-- TIMELINE -->
+    <section class="sec" id="timeline">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">Road to the Finale</span>
+          <h2 class="title fi d1">Event <span class="g">Timeline</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="step a1 fi d1"><div class="node">R1</div><div><span class="date">ONLINE · 8–14 OCT</span><h3>AI Synergy Case Challenge</h3><p>Elimination round: pick a case, investigate it, identify a meaningful problem and propose a feasible AI solution. Top teams are shortlisted.</p></div></div>
+          <div class="step a6 fi d2"><div class="node">R2</div><div><span class="date">ON CAMPUS · 29–30 OCT</span><h3>36-Hour Hackathon</h3><p>Build, adapt &amp; demonstrate at ABV-IIITM Gwalior. 29 Oct, 9 AM → 30 Oct, 9 PM IST.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <div class="rainbow-rule"></div>
+
+    <!-- PRIZES & PERKS -->
+    <section class="sec" id="prizes">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">More Than a Hackathon</span>
+          <h2 class="title fi d1">What You <span class="g">Walk Away With</span></h2>
+        </div>
+        <div class="prize fi">
+          <small>Target Prize Pool</small>
+          <div class="prize-amt g">₹1,00,000</div>
+          <p>Worth of prizes for winning teams</p>
+        </div>
+        <div class="grid g3">
+          <div class="card a2 fi d1"><div class="ico"><svg><use href="#i-briefcase" /></svg></div><h3>PPI Opportunities</h3><p>Pre-Placement Interviews in collaboration with the ABV-IIITM Placement Cell.</p></div>
+          <div class="card a5 fi d2"><div class="ico"><svg><use href="#i-book" /></svg></div><h3>Research Internships</h3><p>Opportunities with research partners for top performers.</p></div>
+          <div class="card a6 fi d3"><div class="ico"><svg><use href="#i-rocket" /></svg></div><h3>Startup Networking</h3><p>Meet founders, mentors and ecosystem partners.</p></div>
+          <div class="card a3 fi d1"><div class="ico"><svg><use href="#i-moon" /></svg></div><h3>Overnight Campus Stay</h3><p>Shortlisted teams stay at ABV-IIITM during the finale.</p></div>
+          <div class="card a4 fi d2"><div class="ico"><svg><use href="#i-award" /></svg></div><h3>Certificates</h3><p>Participation certificates, with winner &amp; finalist recognition.</p></div>
+          <div class="card a1 fi d3"><div class="ico"><svg><use href="#i-trophy" /></svg></div><h3>Summit Stage</h3><p>Showcase your work at the Gwalior AI Summit 2026.</p></div>
+        </div>
+        <p class="fine fi">Prize and partner opportunities are subject to final organiser and partner terms.</p>
+      </div>
+    </section>
+    <div class="rainbow-rule"></div>
+
+    <!-- RULES & JUDGING -->
+    <section class="sec" id="rules">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">Participation Rules</span>
+          <h2 class="title fi d1">Who Can Join &amp; <span class="g">How You're Judged</span></h2>
+        </div>
+        <div class="grid g3" style="margin-bottom:1.2rem">
+          <div class="card a5 fi d1"><div class="ico"><svg><use href="#i-cap" /></svg></div><h3>Eligibility</h3>
+            <ul><li>UG &amp; PG students, any discipline</li><li>No prior AI experience required</li><li>Interdisciplinary teams encouraged</li></ul></div>
+          <div class="card a4 fi d2"><div class="ico"><svg><use href="#i-users" /></svg></div><h3>Teams</h3>
+            <ul><li>2–4 members per team</li><li>Cross-college teams welcome</li><li>One team per participant</li></ul></div>
+          <div class="card a2 fi d3"><div class="ico"><svg><use href="#i-bot" /></svg></div><h3>AI Use</h3>
+            <ul><li>AI tools are allowed — and expected</li><li>Share AI logs &amp; your decision trail</li><li>Humans stay accountable for decisions</li></ul></div>
+        </div>
+
+        <div class="grid g2">
+          <div class="card a3 fi d1">
+            <h3>R1 · Case Challenge <span class="weight">30%</span></h3>
+            <p>Case investigation &amp; problem selection</p>
+            <div class="crit">
+              <div class="crit-row"><span>Problem Diagnosis &amp; Selection</span><b>25%</b></div><div class="bar"><i style="--w-pct:83%"></i></div>
+              <div class="crit-row"><span>Human–AI Collaboration</span><b>25%</b></div><div class="bar"><i style="--w-pct:83%"></i></div>
+              <div class="crit-row"><span>Evidence &amp; Investigation</span><b>20%</b></div><div class="bar"><i style="--w-pct:67%"></i></div>
+              <div class="crit-row"><span>Solution / SRS Quality</span><b>20%</b></div><div class="bar"><i style="--w-pct:67%"></i></div>
+              <div class="crit-row"><span>Context, Ethics &amp; Accountability</span><b>10%</b></div><div class="bar"><i style="--w-pct:33%"></i></div>
+            </div>
+          </div>
+          <div class="card a6 fi d2">
+            <h3>R2 · 36-Hour Hackathon <span class="weight">70%</span></h3>
+            <p>Build, adapt &amp; demonstrate</p>
+            <div class="crit">
+              <div class="crit-row"><span>Working Prototype</span><b>30%</b></div><div class="bar"><i style="--w-pct:100%"></i></div>
+              <div class="crit-row"><span>Adaptation to New Constraint</span><b>20%</b></div><div class="bar"><i style="--w-pct:67%"></i></div>
+              <div class="crit-row"><span>AI Orchestration</span><b>20%</b></div><div class="bar"><i style="--w-pct:67%"></i></div>
+              <div class="crit-row"><span>Testing &amp; Safeguards</span><b>20%</b></div><div class="bar"><i style="--w-pct:67%"></i></div>
+              <div class="crit-row"><span>Communication &amp; Ownership</span><b>10%</b></div><div class="bar"><i style="--w-pct:33%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="rainbow-rule"></div>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="tag fi">Common Questions</span>
+          <h2 class="title fi d1"><span class="g">FAQ</span></h2>
+        </div>
+        <div class="faq">
+          <details class="fi"><summary>What is AI Synergy Hackathon 2026?</summary><p>A case-first Human–AI problem-solving hackathon, part of the Gwalior AI Summit. Teams investigate a situation, decide what problem is worth solving, collaborate critically with AI and, if shortlisted, build and adapt their solution on campus.</p></details>
+          <details class="fi"><summary>Do we get a fixed problem statement?</summary><p>No. Challenges are built around cases and themes. Teams investigate and justify their own problem selection.</p></details>
+          <details class="fi"><summary>Can we use ChatGPT, Gemini, Claude or other AI tools?</summary><p>Yes. Evaluation focuses on how intelligently and responsibly you use AI — not on the model brand, number of prompts or subscription price.</p></details>
+          <details class="fi"><summary>Is a complete application required in Round 1?</summary><p>No. Round 1 focuses on investigation, problem selection, evidence, Human–AI reasoning and a solution plan. A prototype can strengthen feasibility but isn't required.</p></details>
+          <details class="fi"><summary>Do I need coding or AI experience?</summary><p>No prior AI experience is required. Students from every discipline are welcome — curiosity and clear reasoning matter most.</p></details>
+          <details class="fi"><summary>Will accommodation be provided?</summary><p>Shortlisted teams for the on-campus round get an overnight stay at ABV-IIITM Gwalior, subject to final accommodation rules and capacity. Details will be shared with shortlisted teams.</p></details>
+          <details class="fi"><summary>Will I get a certificate?</summary><p>Yes. Eligible participants receive participation certificates, with separate recognition for finalists and winners.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE SECTION -->
-    <section id="timeline">
-      <h2>Event Timeline</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-circle">1</div>
-          <div class="timeline-label">Registration</div>
-          <div class="timeline-date">Closes Oct 10</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-circle">2</div>
-          <div class="timeline-label">Round 1</div>
-          <div class="timeline-date">Online - Oct 12</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-circle">3</div>
-          <div class="timeline-label">Round 2</div>
-          <div class="timeline-date">On-Campus Build</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-circle">4</div>
-          <div class="timeline-label">Finale</div>
-          <div class="timeline-date">Oct 29-30</div>
+    <!-- FINAL CTA -->
+    <section class="sec" id="register" style="padding-top:2rem">
+      <div class="wrap">
+        <div class="final fi">
+          <span class="tag">Registration Closes 11 October 2026</span>
+          <h2 class="title">Ready to Build <span class="g">What Matters?</span></h2>
+          <div class="chips">
+            <span class="chip">Teams of 2–4</span><span class="chip">UG &amp; PG students</span><span class="chip">Cross-college welcome</span><span class="chip">No AI experience needed</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-grad js-register" href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" target="_blank" rel="noopener noreferrer">
+              Register on Unstop <svg aria-hidden="true"><use href="#i-arrow" /></svg>
+            </a>
+          </div>
+          <p class="fine">
+            <a href="/privacy-policy.html" target="_top">Privacy Policy</a> ·
+            <a href="/terms-conditions.html" target="_top">Terms &amp; Conditions</a> ·
+            <a href="/refund-policy.html" target="_top">Refund Policy</a>
+          </p>
         </div>
       </div>
     </section>
-
-    <!-- THEMES SECTION -->
-    <section id="themes">
-      <h2>7 Challenge Tracks</h2>
-      <div class="section-grid">
-        <div class="card">
-          <h3>👥 AI for All</h3>
-          <p>Accessibility, inclusion, learning and productivity for underserved communities.</p>
-        </div>
-        <div class="card">
-          <h3>🌾 Agriculture</h3>
-          <p>Farm decision support, crop intelligence and supply chain optimization.</p>
-        </div>
-        <div class="card">
-          <h3>❤️ Healthcare</h3>
-          <p>Health access, workflow support and patient-centric solutions.</p>
-        </div>
-        <div class="card">
-          <h3>🏖️ Tourism</h3>
-          <p>Travel experiences, heritage preservation and sustainable tourism.</p>
-        </div>
-        <div class="card">
-          <h3>⚡ Energy & Environment</h3>
-          <p>Sustainability, climate resilience and renewable energy solutions.</p>
-        </div>
-        <div class="card">
-          <h3>⚽ Sports</h3>
-          <p>Performance analytics, grassroots participation and fan engagement.</p>
-        </div>
-        <div class="card">
-          <h3>🏛️ Governance</h3>
-          <p>Public services, transparency and citizen-centric digital solutions.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section id="register" style="text-align: center; padding: 4rem 2rem;">
-      <h2>Ready to Build What Matters?</h2>
-      <p style="font-size: 1.1rem; color: #cbd5e1; margin: 1.5rem 0 2rem;">Join us at Gwalior AI Summit 2026 and collaborate with brilliant minds.</p>
-      <div class="cta-buttons">
-        <a href="https://unstop.com/o/rq0yhZ9?lb=usePZj8g&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Aihac61595" class="btn btn-primary" target="_blank">Register Now</a>
-      </div>
-    </section>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Sangillence × ABV-IIITM Gwalior</p>
-    <div>
-      <a href="#contact">Contact</a>
-      <a href="#terms">Terms</a>
-      <a href="#privacy">Privacy</a>
-    </div>
-  </footer>
+  </main>
 
   <script>
-    // Generate starfield
-    function createStarfield() {
-      const starfield = document.getElementById('starfield');
-      const starCount = 100;
+    (function () {
+      document.body.classList.remove('no-js');
+      var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 3 + 's';
-        star.style.opacity = Math.random() * 0.7 + 0.3;
-        starfield.appendChild(star);
-      }
-    }
-
-    createStarfield();
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Background video: fall back to particles only if it can't load or play.
+      var video = document.getElementById('bgVideo');
+      if (video) {
+        var hideVideo = function () { video.style.display = 'none'; };
+        var source = video.querySelector('source');
+        if (source) source.addEventListener('error', hideVideo);
+        video.addEventListener('error', hideVideo);
+        if (reduceMotion) {
+          video.pause();
+        } else {
+          var playing = video.play && video.play();
+          if (playing && playing.catch) playing.catch(function () {});
         }
-      });
-    });
+      }
 
-    // Analytics
-    document.querySelectorAll('a[href*="unstop.com"]').forEach(link => {
-      link.addEventListener('click', () => {
-        console.log('Registration clicked');
+      // Registration countdown; stays hidden once the deadline passes.
+      var cd = document.getElementById('countdown');
+      var deadline = new Date('2026-10-11T23:59:59+05:30').getTime();
+      var days = Math.ceil((deadline - Date.now()) / 86400000);
+      if (cd && days > 0) {
+        cd.innerHTML = 'Registration closes in <b>' + days + (days === 1 ? ' day' : ' days') + '</b> · 11 October 2026';
+        cd.hidden = false;
+      }
+
+      // Scroll reveal
+      var items = document.querySelectorAll('.fi');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.08 });
+        items.forEach(function (el) { obs.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add('v'); });
+      }
+
+      document.querySelectorAll('.js-register').forEach(function (a) {
+        a.addEventListener('click', function () {
+          var s = a.closest('section, header');
+          console.log('[AI Synergy] register click:', s ? s.id : 'unknown');
+        });
       });
-    });
+
+      // Particle network
+      var c = document.getElementById('cv');
+      var ctx = c && c.getContext ? c.getContext('2d') : null;
+      if (!ctx || reduceMotion) return;
+      var W, H, nodes = [], DIST = 140;
+      var COLS = ['#ff5f6d', '#ffa84b', '#ffe066', '#6ee7a0', '#4fc3f7', '#a78bfa'];
+      function resize() {
+        W = c.width = window.innerWidth;
+        H = c.height = window.innerHeight;
+        var n = Math.min(90, Math.floor(W * H / 16000));
+        nodes = [];
+        for (var i = 0; i < n; i++) {
+          nodes.push({
+            x: Math.random() * W, y: Math.random() * H,
+            vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+            r: Math.random() * 1.6 + .6, col: COLS[i % COLS.length]
+          });
+        }
+      }
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < nodes.length; i++) {
+          var a = nodes[i];
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < 0 || a.x > W) a.vx *= -1;
+          if (a.y < 0 || a.y > H) a.vy *= -1;
+          for (var j = i + 1; j < nodes.length; j++) {
+            var b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (d < DIST) {
+              ctx.strokeStyle = 'rgba(120,200,255,' + (.13 * (1 - d / DIST)) + ')';
+              ctx.lineWidth = .5;
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            }
+          }
+          ctx.globalAlpha = .7;
+          ctx.fillStyle = a.col;
+          ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2); ctx.fill();
+          ctx.globalAlpha = 1;
+        }
+        requestAnimationFrame(tick);
+      }
+      var rt;
+      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(resize, 150); });
+      resize();
+      tick();
+    })();
   </script>
 </body>
 </html>
