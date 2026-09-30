@@ -63,6 +63,34 @@
     #cv { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
     main { position: relative; z-index: 1; }
 
+    /* LAUNCH VIDEO */
+    .launch { padding: 1.5rem 1.25rem 0; }
+    .launch-frame {
+      position: relative; max-width: 1200px; margin: 0 auto;
+      aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+      border: 1px solid transparent;
+      background-image: linear-gradient(#050d1f, #050d1f), var(--rainbow);
+      background-origin: border-box; background-clip: padding-box, border-box;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .55), 0 0 60px rgba(79, 195, 247, .12);
+    }
+    .launch-frame video { display: block; width: 100%; height: 100%; object-fit: cover; background: #050d1f; }
+    .unmute {
+      position: absolute; right: 1rem; bottom: 4.2rem;
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .55rem 1rem; border-radius: 999px; border: 0; cursor: pointer;
+      font-family: var(--D); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: #081226; background: var(--rainbow);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .4);
+    }
+    .unmute[hidden] { display: none; }
+    .unmute svg { width: 15px; height: 15px; }
+    @media (max-width: 640px) {
+      .launch { padding: 1rem 1rem 0; }
+      .launch-frame { border-radius: 14px; }
+      .unmute { top: .55rem; right: .55rem; bottom: auto; padding: .38rem .7rem; font-size: .54rem; }
+      .unmute svg { width: 12px; height: 12px; }
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -412,6 +440,21 @@
   <canvas id="cv" aria-hidden="true"></canvas>
 
   <main>
+    <!-- LAUNCH VIDEO -->
+    <section class="launch" id="launch-video" aria-label="AI Synergy launch video">
+      <div class="launch-frame">
+        <video id="launchVideo" autoplay muted loop playsinline controls preload="auto"
+          poster="https://res.cloudinary.com/dstbd40ud/video/upload/so_2/v1790787987/AI_Synergy_Launch_Video_mfntyi.jpg">
+          <source src="https://res.cloudinary.com/dstbd40ud/video/upload/q_auto/v1790787987/AI_Synergy_Launch_Video_mfntyi.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dstbd40ud/video/upload/v1790787987/AI_Synergy_Launch_Video_mfntyi.mp4" type="video/mp4" />
+        </video>
+        <button class="unmute" id="unmuteBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          Tap for sound
+        </button>
+      </div>
+    </section>
+
     <!-- HERO -->
     <header class="hero" id="home">
       <img class="college-logo" src="/assets/college-logo.svg" alt="ABV-IIITM Gwalior" draggable="false" onerror="this.style.display='none'" />
@@ -644,6 +687,31 @@
           var playing = video.play && video.play();
           if (playing && playing.catch) playing.catch(function () {});
         }
+      }
+
+      // Launch video: autoplays muted (browser policy); hide the block if every source fails.
+      var launch = document.getElementById('launchVideo');
+      var unmute = document.getElementById('unmuteBtn');
+      if (launch) {
+        var sources = launch.querySelectorAll('source');
+        var lastSource = sources[sources.length - 1];
+        if (lastSource) lastSource.addEventListener('error', function () {
+          document.getElementById('launch-video').style.display = 'none';
+        });
+        if (reduceMotion) { launch.removeAttribute('autoplay'); launch.pause(); }
+        else {
+          var lp = launch.play && launch.play();
+          if (lp && lp.catch) lp.catch(function () {});
+        }
+        var syncUnmute = function () { if (unmute) unmute.hidden = !launch.muted; };
+        launch.addEventListener('volumechange', syncUnmute);
+        if (unmute) unmute.addEventListener('click', function () {
+          launch.muted = false;
+          launch.currentTime = 0;
+          var up = launch.play();
+          if (up && up.catch) up.catch(function () {});
+        });
+        syncUnmute();
       }
 
       // Registration countdown; stays hidden once the deadline passes.
